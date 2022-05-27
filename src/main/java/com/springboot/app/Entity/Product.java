@@ -1,5 +1,7 @@
 package com.springboot.app.Entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
+
 @Entity
+@Component
 @Table(name = "Product")
 public class Product {
 	@Id
@@ -21,7 +26,7 @@ public class Product {
 	@Column(name = "batch")
 	private String batch;
 	@Column(name = "stock")
-	private String stock;
+	private Integer stock;
 	@Column(name = "deal")
 	private String deal;
 	@Column(name = "free")
@@ -31,14 +36,14 @@ public class Product {
 	@Column(name = "rate")
 	private String rate;
 	@Column(name = "exp")
-	private String exp;
+	private Date exp;
 	@Column(name = "company")
 	private String company;
 	@Column(name = "supplier")
 	private String supplier;
 	
-	public Product(int id, String code, String name, String batch, String stock, String deal, String free, String mrp,
-			String rate, String exp, String company, String supplier) {
+	public Product(int id, String code, String name, String batch, Integer stock, String deal, String free, String mrp,
+			String rate, Date exp, String company, String supplier) {
 		super();
 		this.id = id;
 		this.code = code;
@@ -93,11 +98,11 @@ public class Product {
 		this.batch = batch;
 	}
 
-	public String getStock() {
+	public Integer getStock() {
 		return stock;
 	}
 
-	public void setStock(String stock) {
+	public void setStock(Integer stock) {
 		this.stock = stock;
 	}
 
@@ -133,11 +138,11 @@ public class Product {
 		this.rate = rate;
 	}
 
-	public String getExp() {
+	public Date getExp() {
 		return exp;
 	}
 
-	public void setExp(String exp) {
+	public void setExp(Date exp) {
 		this.exp = exp;
 	}
 
