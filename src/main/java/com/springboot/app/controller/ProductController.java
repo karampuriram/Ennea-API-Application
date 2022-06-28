@@ -37,7 +37,7 @@ public class ProductController {
 		productServiceImpl.saveProducts(file);
 		return ResponseEntity.ok().build();
 	}
-	
+	//Testing
 	@RequestMapping(value="/suplier_products/{supplier}", method = RequestMethod.GET)
 	public List<Product> getSuplierProductsList(@PathVariable("supplier") String supplier,
 			@RequestParam(value="product_name", required = false) String name,
